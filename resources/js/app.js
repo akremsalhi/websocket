@@ -9,7 +9,7 @@ Echo.channel(`channel-user`).listen("UserJoinEvent", (e) => {
 
 const textInput = document.querySelector("#text-msg");
 const btn = document.querySelector("#btn");
-const formField = document.querySelector("#form-field");
+const error = document.querySelector("#error");
 const messagesList = document.querySelector("#messages");
 const usersList = document.querySelector("#users");
 const currentIdElem = document.querySelector("#id");
@@ -19,6 +19,10 @@ const currentUserId = currentIdElem.value;
 function senMessage(e) {
     e.preventDefault();
     const body = { message: textInput.value, from: currentUserId };
+
+    error.classList.add("hidden");
+    error.classList.remove("block");
+    error.textContent = "";
 
     jsonFetch("/api/store", {
         method: "POST",
@@ -33,7 +37,7 @@ function senMessage(e) {
             textInput.value = "";
         })
         .catch((error) => {
-            displayErrorMessage(error.message);
+            displayErrorMessage(error?.errors?.message[0] ?? "");
         });
 }
 
@@ -45,12 +49,10 @@ function handleKeyUp(e) {
 }
 
 function displayErrorMessage(value) {
-    const div = document.createElement("div");
-    div.id = "error";
-    div.classList.add("text-red-800");
-    div.textContent = value;
-
-    formField.appendChild(div);
+    error.textContent = value;
+    error.classList.remove("hidden");
+    error.classList.add("block");
+    error.classList.add("text-red-800");
 }
 
 function createMessage({ message, from }) {
