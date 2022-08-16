@@ -45,7 +45,7 @@
                             </div>
                             <div class="relative" id="form-field">
                                 <input type="text" id="text-msg" name="message" class="rounded-lg w-96" placeholder="Ecrire votre message">
-                                <div id="error" class="hidden"></div>
+                                <div id="error" class="hidden text-red-800"></div>
                             </div>
 
 
