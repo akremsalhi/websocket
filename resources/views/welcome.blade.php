@@ -37,14 +37,7 @@
                 <div class="flex flex-col p-4 gap-2">
 
                     <h1 class="text-2xl">Discussion</h1>
-                        <ul id="messages" class="flex flex-col p-6 rounded-lg shadow gap-4 bg-white">
-                            {{-- <li class="px-3 py-2 bg-slate-300 rounded-xl">Client: Bonjour</li>
-                            <li class="px-3 py-2 bg-slate-300 rounded-xl">Client: Hello</li>
-                            <li class="px-3 py-2 bg-slate-300 rounded-xl">Client: Exercice simple de chat</li>
-                            <li class="px-3 py-2 bg-slate-300 rounded-xl">Client: Exercice simple de chat</li>
-                            <li class="px-3 py-2 bg-slate-300 rounded-xl">Client: Exercice simple de chat</li>
-                            <li class="px-3 py-2 bg-slate-300 rounded-xl">Client: Exercice simple de chat</li> --}}
-                        </ul>
+                        <ul id="messages" class="flex flex-col p-6 rounded-lg shadow gap-4 bg-white"></ul>
 
                         <div class="flex gap-3">
                             <div class="relative" id="userId">
