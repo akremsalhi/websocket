@@ -52,7 +52,6 @@ function displayErrorMessage(value) {
     error.textContent = value;
     error.classList.remove("hidden");
     error.classList.add("block");
-    error.classList.add("text-red-800");
 }
 
 function createMessage({ message, from }) {
