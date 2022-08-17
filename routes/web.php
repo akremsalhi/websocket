@@ -15,10 +15,4 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-
-    $id = Str::random(6);
-
-    broadcast(new UserJoinEvent($id))->toOthers();
-    return view('welcome', compact('id'));
-});
+Route::get('/', [HomeController::class, 'index']);

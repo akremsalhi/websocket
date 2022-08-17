@@ -33,7 +33,6 @@ function senMessage(e) {
     })
         .then(({ data }) => {
             createMessage(data);
-
             textInput.value = "";
         })
         .catch((error) => {
